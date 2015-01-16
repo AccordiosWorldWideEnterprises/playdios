@@ -1,0 +1,101 @@
+// Imports
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/normalize";
+@import "bootstrap/carousel";
+@import "mixins";
+
+
+// Global Styles
+html, body {
+  @include full-screen();
+  text-align: center;
+}
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  @include full-screen-bg();
+  background-image: url(../images/playdios-1.jpg);
+  background-attachment: fixed;
+}
+
+.container {
+  @include full-screen();
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  & > * {
+    flex-shrink: 0;
+  }
+}
+
+header {
+  margin-bottom: -40px;
+
+  .play {
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .logo {
+    margin: -320px 0 1rem;
+    padding: 0 20px;
+
+    @media (max-width: $screen-xs-max) {
+      margin-top: -60%;
+    }
+
+    img {
+      max-height: 80px;
+
+      @media (max-width: $screen-xs-max) {
+        width: 100%;
+        max-height: none;
+      }
+    }
+  }
+
+  .slogan {
+    width: 300px;
+    margin: 0 auto 160px;
+    color: white;
+    text-shadow: 0 0 10px black;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @media (max-width: $screen-xs-max) {
+      margin-bottom: 35%;
+    }
+  }
+}
+
+section {
+  .button {
+    display: inline-block;
+    margin: 1em 0;
+    padding: 10px 25px;
+    border: 1px solid white;
+    border-radius: 1000px;
+    color: white;
+    background-color: black;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      color: black;
+      background-color: white;
+    }
+  }
+}
+
+footer {
+  p {
+    margin: 0 20px 20px;
+    font-size: 13px;
+  }
+}
